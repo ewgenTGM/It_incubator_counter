@@ -1,0 +1,21 @@
+.board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    border: 5px solid tomato;
+    border-radius: 7px;
+    background-color: darkblue;
+    font-size: 36px;
+    color: whitesmoke;
+    font-weight: bold;
+    text-shadow: 0 0 10px white;
+}
+
+.danger {
+    font-size: 48px;
+    font-weight: bold;
+    color: red;
+    text-shadow: 0 0 15px red;
+}

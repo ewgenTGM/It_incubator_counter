@@ -1,0 +1,32 @@
+.btn {
+    width: 120px;
+    height: 45px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+    border-left: 5px solid;
+    border-right: 5px solid;
+    background-color: darkorange;
+}
+
+.btn, .btn:active, .btn:focus{
+    outline: none;
+}
+
+.btn.enabled:hover{
+    box-shadow: 0 0 5px blue;
+}
+
+.enabled{
+    border-color: blue;
+    color: blue;
+    text-shadow: 0 0 1px blue;
+}
+
+.disabled{
+    border-color: gray;
+    color: gray;
+    background-color: lightgray;
+}
