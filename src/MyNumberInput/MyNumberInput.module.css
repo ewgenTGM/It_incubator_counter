@@ -1,0 +1,12 @@
+.MyNumberInput{
+
+}
+
+.number_input{
+    margin: 10px;
+    padding: 5px;
+    font-size: 26px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 3px;
+}
