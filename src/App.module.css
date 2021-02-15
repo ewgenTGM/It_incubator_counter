@@ -49,3 +49,26 @@
     color: darkred;
     text-shadow: 0 0 1px darkred;
 }
+
+.current_values_block{
+    margin-top: 15px;
+    text-align: center;
+}
+
+.setters_block{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid tomato;
+    margin: 10px;
+}
+
+.btn_set_value{
+    border-radius: 3px;
+    font-size: 24px;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid;
+    margin-bottom: 10px;
+}
