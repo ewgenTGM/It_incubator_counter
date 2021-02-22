@@ -92,14 +92,14 @@ export const App: React.FC = () => {
         <div className={ styles.setters_block }>
           <MyNumberInput
               value={ state.minValue }
-              onDecrement={ () => {} }
-              onIncrement={ () => {} }
+              onDecrement={ () => {dispatch( decMinValueAC() );} }
+              onIncrement={ () => {dispatch( incMinValueAC() );} }
               decDisabled={ false }
               incDisabled={ false }/>
           <MyNumberInput
               value={ state.maxValue }
-              onDecrement={ () => {} }
-              onIncrement={ () => {} }
+              onDecrement={ () => {dispatch( decMaxValueAC() );} }
+              onIncrement={ () => {dispatch( incMaxValueAC() );} }
               decDisabled={ false }
               incDisabled={ false }/>
           <button
