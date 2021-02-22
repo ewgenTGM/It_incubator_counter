@@ -3,7 +3,8 @@ import styles from './MyNumberInput.module.css';
 
 type MyNumberInputPropsType = {
   value: number
-  onValueChange: ( value: number ) => void
+  onIncrement: () => void
+  onDecrement: () => void
   error?: boolean
   incDisabled?: boolean
   decDisabled?: boolean
@@ -15,7 +16,7 @@ const MyNumberInput: FC<MyNumberInputPropsType> = ( props ) => {
         <button
             className={ styles.btn }
             disabled={ props.decDisabled }
-            onClick={ () => props.onValueChange( props.value - 1 ) }>
+            onClick={ props.onDecrement }>
           -
         </button>
         <input
@@ -26,7 +27,7 @@ const MyNumberInput: FC<MyNumberInputPropsType> = ( props ) => {
         <button
             className={ styles.btn }
             disabled={ props.incDisabled }
-            onClick={ () => props.onValueChange( props.value + 1 ) }>
+            onClick={ props.onIncrement }>
           +
         </button>
       </div>
