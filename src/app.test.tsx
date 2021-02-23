@@ -12,6 +12,8 @@ let state: AppStateType = {
   counter: 0,
   minValue: 0,
   maxValue: 10,
+  globalMinValue: 0,
+  globalMaxValue: 10,
   isFormBlocked: false
 };
 

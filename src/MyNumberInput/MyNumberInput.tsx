@@ -1,7 +1,7 @@
-import React, { FC } from 'react';
+import React, { VFC } from 'react';
 import styles from './MyNumberInput.module.css';
 
-type MyNumberInputPropsType = {
+type PropsType = {
   value: number
   onIncrement: () => void
   onDecrement: () => void
@@ -10,28 +10,32 @@ type MyNumberInputPropsType = {
   decDisabled?: boolean
 }
 
-const MyNumberInput: FC<MyNumberInputPropsType> = ( props ) => {
+export const MyNumberInput: VFC<PropsType> = ( {
+                                                       decDisabled,
+                                                       incDisabled,
+                                                       onDecrement,
+                                                       onIncrement,
+                                                       value
+                                                     } ) => {
   return (
       <div className={ styles.MyNumberInput }>
         <button
             className={ styles.btn }
-            disabled={ props.decDisabled }
-            onClick={ props.onDecrement }>
+            disabled={ decDisabled }
+            onClick={ onDecrement }>
           -
         </button>
         <input
             className={ styles.number_input }
             type="text"
             readOnly={ true }
-            value={ props.value }/>
+            value={ value }/>
         <button
             className={ styles.btn }
-            disabled={ props.incDisabled }
-            onClick={ props.onIncrement }>
+            disabled={ incDisabled }
+            onClick={ onIncrement }>
           +
         </button>
       </div>
   );
 };
-
-export default MyNumberInput;

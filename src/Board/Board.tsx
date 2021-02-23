@@ -1,18 +1,16 @@
-import React from 'react';
+import React, { VFC } from 'react';
 import styles from './Board.module.css';
 
-type BoardPropsType = {
+type PropsType = {
   text: string
   isDanger: boolean
 }
 
-const Board = (props: BoardPropsType) => {
-  const classes: string = `${styles.board} ` + (props.isDanger ? styles.danger : '');
+export const Board: VFC<PropsType> = ( { isDanger, text } ) => {
+  const classes: string = `${ styles.board } ` + ( isDanger ? styles.danger : '' );
   return (
-      <div className={classes}>
-        <span>ТЕК СЧ: {props.text}</span>
+      <div className={ classes }>
+        <span>ТЕК СЧ: { text }</span>
       </div>
   );
 };
-
-export default Board;
