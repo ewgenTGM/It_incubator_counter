@@ -5,19 +5,21 @@ import {
   incCounterAC,
   incMaxValueAC,
   incMinValueAC,
-  reducer, resetCounterAC
+  reducer, resetCounterAC, setIsFormBlockedAC
 } from './App';
 
 let state: AppStateType = {
   counter: 0,
   minValue: 0,
-  maxValue: 10
+  maxValue: 10,
+  isFormBlocked: false
 };
 
 beforeEach( () => {
   state.counter = 5;
   state.minValue = 3;
   state.maxValue = 10;
+  state.isFormBlocked = false;
 } );
 
 test( 'Increment counter', () => {
@@ -54,4 +56,16 @@ test( 'Reset value', () => {
   const newState = reducer( state, resetCounterAC() );
   expect( newState ).not.toBe( state );
   expect( newState.counter ).toBe( state.minValue );
+} );
+
+test( 'Set is form blocked to false', () => {
+  const newState = reducer( state, setIsFormBlockedAC( false ) );
+  expect( newState ).not.toBe( state );
+  expect( newState.isFormBlocked ).toBeFalsy();
+} );
+
+test( 'Set is form blocked to true', () => {
+  const newState = reducer( state, setIsFormBlockedAC( true ) );
+  expect( newState ).not.toBe( state );
+  expect( newState.isFormBlocked ).toBeTruthy();
 } );

@@ -5,7 +5,11 @@ import { App } from './App';
 
 ReactDOM.render(
     <React.StrictMode>
-      <App/>
+      <App
+          initialMinValue={ 3 }
+          initialMaxValue={ 7 }
+          globalMinValue={ 0 }
+          globalMaxValue={ 15 }/>
     </React.StrictMode>,
     document.getElementById( 'root' )
 );
