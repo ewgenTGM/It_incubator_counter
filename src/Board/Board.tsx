@@ -6,7 +6,8 @@ type PropsType = {
   isDanger: boolean
 }
 
-export const Board: VFC<PropsType> = ( { isDanger, text } ) => {
+export const Board: VFC<PropsType> = props => {
+  const { isDanger, text } = props;
   const classes: string = `${ styles.board } ` + ( isDanger ? styles.danger : '' );
   return (
       <div className={ classes }>

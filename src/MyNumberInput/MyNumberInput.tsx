@@ -10,13 +10,16 @@ type PropsType = {
   decDisabled?: boolean
 }
 
-export const MyNumberInput: VFC<PropsType> = ( {
-                                                 decDisabled,
-                                                 incDisabled,
-                                                 onDecrement,
-                                                 onIncrement,
-                                                 value
-                                               } ) => {
+export const MyNumberInput: VFC<PropsType> = props => {
+
+  const {
+    decDisabled,
+    incDisabled,
+    onDecrement,
+    onIncrement,
+    value
+  } = props;
+
   return (
       <div className={ styles.MyNumberInput }>
         <button

@@ -51,7 +51,7 @@ export const App: React.VFC = () => {
           <Board
               text={ counter.toString() }
               isDanger={ counter === maxValue }/>
-          <fieldset className={ styles.button_block_fieldset }>
+          <fieldset className={ styles.fieldset }>
             <legend>Манипуляторы ввода</legend>
             <div className={ styles.button_block }>
               <MyButton
@@ -71,45 +71,49 @@ export const App: React.VFC = () => {
           <span>{ `Global max value: ${ globalMaxValue }` }</span><br/>
 
         </div>
+
         <div className={ styles.setters_block }>
-          <MyNumberInput
-              value={ minValue }
-              onDecrement={ () => {
-                dispatch( decMinValue() );
-                dispatch( setIsFormBlocked( true ) );
-                dispatch( setIsSettersBlocked( false ) );
-              } }
-              onIncrement={ () => {
-                dispatch( incMinValue() );
-                dispatch( setIsFormBlocked( true ) );
-                dispatch( setIsSettersBlocked( false ) );
-              } }
-              decDisabled={ minValue === globalMinValue }
-              incDisabled={ minValue === maxValue - 1 }/>
-          <MyNumberInput
-              value={ maxValue }
-              onDecrement={ () => {
-                dispatch( decMaxValue() );
-                dispatch( setIsFormBlocked( true ) );
-                dispatch( setIsSettersBlocked( false ) );
-              } }
-              onIncrement={ () => {
-                dispatch( incMaxValue() );
-                dispatch( setIsFormBlocked( true ) );
-                dispatch( setIsSettersBlocked( false ) );
-              } }
-              decDisabled={ maxValue === minValue + 1 }
-              incDisabled={ maxValue === globalMaxValue }/>
-          <button
-              onClick={ () => {
-                dispatch( resetCounter() );
-                dispatch( setIsFormBlocked( false ) );
-                dispatch( setIsSettersBlocked( true ) );
-              } }
-              disabled={ isSettersBlocked }
-              className={ styles.btn_set_value }>Set values
-          </button>
+          <fieldset className={ `${styles.fieldset} ${styles.setters_block_fieldset}` }>
+            <legend>Манипуляторы ввода</legend>
+            <MyNumberInput
+                value={ minValue }
+                onDecrement={ () => {
+                  dispatch( decMinValue() );
+                  dispatch( setIsFormBlocked( true ) );
+                  dispatch( setIsSettersBlocked( false ) );
+                } }
+                onIncrement={ () => {
+                  dispatch( incMinValue() );
+                  dispatch( setIsFormBlocked( true ) );
+                  dispatch( setIsSettersBlocked( false ) );
+                } }
+                decDisabled={ minValue === globalMinValue }
+                incDisabled={ minValue === maxValue - 1 }/>
+            <MyNumberInput
+                value={ maxValue }
+                onDecrement={ () => {
+                  dispatch( decMaxValue() );
+                  dispatch( setIsFormBlocked( true ) );
+                  dispatch( setIsSettersBlocked( false ) );
+                } }
+                onIncrement={ () => {
+                  dispatch( incMaxValue() );
+                  dispatch( setIsFormBlocked( true ) );
+                  dispatch( setIsSettersBlocked( false ) );
+                } }
+                decDisabled={ maxValue === minValue + 1 }
+                incDisabled={ maxValue === globalMaxValue }/>
+            <MyButton
+                labelText='УСТ ЗНАЧ'
+                onClickCallback={ () => {
+                  dispatch( resetCounter() );
+                  dispatch( setIsFormBlocked( false ) );
+                  dispatch( setIsSettersBlocked( true ) );
+                } }
+                isDisabled={ isSettersBlocked }/>
+          </fieldset>
         </div>
+
       </div>
 
   );

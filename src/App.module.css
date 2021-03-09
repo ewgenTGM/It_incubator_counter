@@ -27,7 +27,7 @@
     box-shadow: 0 0 10px black;
 }
 
-.button_block_fieldset{
+.fieldset{
     padding: 5px;
     border: 2px solid darkred;
     border-radius: 5px;
@@ -56,19 +56,17 @@
 }
 
 .setters_block{
+    border: 5px solid dodgerblue;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 10px 10px 5px 10px;
+    background-color: lightskyblue;
+    box-shadow: 0 0 10px black;
+}
+
+.setters_block_fieldset {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid tomato;
-    margin: 10px;
-}
-
-.btn_set_value{
-    border-radius: 3px;
-    font-size: 24px;
-    text-align: center;
-    padding: 5px;
-    border: 1px solid;
-    margin-bottom: 10px;
 }

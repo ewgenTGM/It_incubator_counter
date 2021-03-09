@@ -7,7 +7,10 @@ type PropsType = {
   isDisabled: boolean
 }
 
-export const MyButton: VFC<PropsType> = ( { labelText, isDisabled, onClickCallback } ) => {
+export const MyButton: VFC<PropsType> = props => {
+
+  const { labelText, isDisabled, onClickCallback } = props;
+
   const classes: string = `${ styles.btn } ` + ( isDisabled ? styles.disabled : styles.enabled );
   return (
       <button
