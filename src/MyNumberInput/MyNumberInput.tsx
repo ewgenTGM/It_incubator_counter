@@ -11,12 +11,12 @@ type PropsType = {
 }
 
 export const MyNumberInput: VFC<PropsType> = ( {
-                                                       decDisabled,
-                                                       incDisabled,
-                                                       onDecrement,
-                                                       onIncrement,
-                                                       value
-                                                     } ) => {
+                                                 decDisabled,
+                                                 incDisabled,
+                                                 onDecrement,
+                                                 onIncrement,
+                                                 value
+                                               } ) => {
   return (
       <div className={ styles.MyNumberInput }>
         <button
